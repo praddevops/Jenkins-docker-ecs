@@ -1,6 +1,9 @@
 # Jenkins-docker-ecs
 Jenkins pipeline to deploy new image to AWS ECS service
 
+### ECS 
+* Your AWS account must be setup with an ECS cluster named `main`, a service with name `node-app` that uses task-definition named `node-app`
+
 ### App code is located in src/main/node-app. Any changes made will trigger the pipeline which builds new image and updates the ECS service with new image
 
 ## CICD pipeline:
