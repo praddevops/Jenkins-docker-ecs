@@ -10,6 +10,8 @@ Jenkins pipeline to deploy new image to AWS ECS service
 
 Jenkins version: 2.234
 
+Jenkins Plugin Requirements(in addition to default plugins): AnsiColor, Pipeline Utility Steps
+
 ### Following credential should be present in Jenkins
 
 * aws_access_key_id (Credential type: secret text): AWS_ACCESS_KEY_ID
