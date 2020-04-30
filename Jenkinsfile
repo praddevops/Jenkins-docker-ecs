@@ -88,7 +88,6 @@ pipeline {
                 def container_definition
                 def task_family
                 def new_task_revision
-                def current_image
                 sh "aws ecs describe-task-definition --task-definition node-app --region ${AWS_REGION} --output json > describe_task_response.json"
                 taskDef = readJSON file: 'describe_task_response.json'
                 container_definition = taskDef['taskDefinition']['containerDefinitions']
@@ -97,7 +96,7 @@ pipeline {
                 new_task_revision = taskDef['taskDefinition']['revision'].toInteger() + 1
                 writeJSON(file: 'containerDefinitions.json', json: container_definition)
                 sh """
-                sed -i 's;${current_image};${DOCKERHUBUSERNAME}/node-app\:${version};g' containerDefinitions.json
+                sed -i -e 's;${current_image};${DOCKERHUBUSERNAME}/node-app:${version};g' containerDefinitions.json
                 echo "NEW TASK DEFINITION(REVISON: ${new_task_revision}"
                 cat containerDefinitions.json
                 echo ""
