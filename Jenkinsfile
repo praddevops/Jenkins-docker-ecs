@@ -21,7 +21,6 @@ pipeline {
      }
 
     environment {
-            AWS_CRED_FILE = credentials('aws_creds_json')
             DEF_AWS_ACCESS_KEY_ID = credentials('aws_access_key_id')
             DEF_AWS_ACCESS_SECRET_KEY = credentials('aws_access_key')
             AWS_REGION = "${params.Region}"
