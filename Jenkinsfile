@@ -75,6 +75,7 @@ pipeline {
                 sudo docker build . -f build/Dockerfile --no-cache -t ${DOCKERHUBUSERNAME}/node-app:${version}
                 sudo docker login --username=${DOCKERHUBUSERNAME} --password ${DOCKERHUBPASSW}
                 sudo docker push ${DOCKERHUBUSERNAME}/node-app:${version}
+                sudo docker logout
                 """
               } 
             }
