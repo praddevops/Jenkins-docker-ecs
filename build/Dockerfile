@@ -10,7 +10,13 @@ USER node
 
 RUN npm install
 
-COPY --chown=node:node ./src/main/node-app/ .
+USER root
+
+COPY ./src/main/node-app/ .
+
+RUN chown -R node:node .
+
+USER node
 
 EXPOSE 8080
 

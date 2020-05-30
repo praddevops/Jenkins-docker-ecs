@@ -14,10 +14,10 @@ Jenkins Plugin Requirements(in addition to default plugins): AnsiColor, Pipeline
 
 ### Following credentials should be present in Jenkins
 
-* aws_access_key_id (Credential type: secret text): "AWS Access Key ID"
-* aws_access_key (Credential type: secret text): "AWS Access Secret Key"
-* dockerhub_username (Credential type: secret text): "Dockerhub username"
-* dockerhub_pw (Credential type: secret text): "Dockerhub repo password"
+* `aws_access_key_id` (Credential type: secret text): "AWS Access Key ID"
+* `aws_access_key` (Credential type: secret text): "AWS Access Secret Key"
+* `dockerhub_username` (Credential type: secret text): "Dockerhub username"
+* `dockerhub_pw` (Credential type: secret text): "Dockerhub repo password"
 
 ### Jenkins Troubleshooting
 
